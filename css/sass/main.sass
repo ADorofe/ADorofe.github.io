@@ -1,0 +1,430 @@
+$desk: 790px
+@font-face
+    font-family: 'Georgia Regular'
+    src: url("../font/Georgia-regular.ttf") format("truetype")
+
+.header
+    display: flex
+    flex-direction: row
+    background: gray url('../img/bg.jpg')
+    background-blend-mode: normal
+    width: 100%
+    justify-content: space-between
+    align-items: center
+    @media screen and (min-width: 1024px)
+        display: none
+    &__logo
+        display: block
+        width: 100%
+        font-family: 'Georgia Regular'
+        font-size: 28px
+        color: #f4f4f4
+        text-transform: uppercase
+        text-decoration: none
+        padding: 0 15px
+
+.btn-menu
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+    background-color: transparent
+    padding: 0
+    border: none
+    flex-direction: column
+    border-right: 1px solid rgb(104, 100, 100)
+    padding: 15px
+    &__line
+        width: 22px
+        height: 2px
+        background-color: #fff
+        margin-bottom: 6px
+        &:nth-last-child(1)
+            margin-bottom: 0
+
+.btn-phone
+    background: transparent
+    border: none
+    display: flex
+    padding: 15px
+    border-left: 1px solid rgb(104, 100, 100)
+
+.sidebar
+    min-height: 100vh
+    width: 310px
+    position: fixed
+    top: 0
+    left: 0
+    flex-direction: column
+    background: gray url('../img/bg.jpg')
+    background-blend-mode: normal
+    justify-content: inherit
+    font-family: 'Open Sans', sans-serif
+    display: none
+    overflow: scroll
+    @media screen and (min-height: $desk)
+        justify-content: space-between
+        overflow: hidden
+
+    @media screen and (min-width: 1024px)
+        display: flex
+
+    &__header
+        padding: 20px 33px
+        @media screen and (min-height: 657px)
+            padding: 5px 33px
+        @media screen and (min-height: $desk)
+            padding: 30px 33px
+
+.description
+    font-size: 16px
+    color: #aaa9a9
+    line-height: 1.25
+    text-align: left
+    padding-top: 0
+    padding-left: 4px
+    @media screen and (min-height: $desk)
+        padding-top: 21px
+
+.menu
+    padding: 0
+    margin: 0
+    &__item
+        list-style-type: none
+        position: relative
+    &__link
+        text-decoration: none
+        text-align: left
+    &__flag
+        display: block
+        background-color: #b36060
+        width: 22px
+        height: 24px
+        line-height: 22px
+        padding-left: 6px
+        color: #f0f0f0
+        font-size: 12px
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+
+        &::before
+            content: ""
+            display: inline-block
+            border: 6px solid transparent
+            border-top: 6px solid #b36060
+            border-right: 5px solid #b36060
+            position: absolute
+            left: -11px
+        &::after
+            content: ""
+            display: inline-block
+            border: 6px solid transparent
+            border-bottom: 6px solid #b36060
+            border-right: 5px solid #b36060
+            position: absolute
+            left: -11px
+            bottom: 0
+
+.big-menu
+    &__item
+        text-align: left
+        border-bottom: 1px solid #686464
+    &__link
+        font-size: 16px
+        line-height: 62px
+        color: #f7f7f7
+        text-transform: uppercase
+        padding-left: 38px
+        display: block
+        &:hover
+            color: #bdbdbd
+        @media screen and (min-height: 657px)
+            line-height: 45px
+
+.small-menu
+    padding: 10px 0
+    @media screen and (min-height: $desk)
+        padding: 20px 0
+
+    &__link
+        display: block
+        font-size: 16px
+        line-height: 32px
+        color: #bdbdbd
+        padding-left: 39px
+        &:hover
+            color: #f7f7f7
+
+.sidebar__contact
+    padding: 0 37px
+    @media screen and (min-height: $desk)
+        padding: 45px 37px
+
+.contact
+    &__phone
+        font-size: 20px
+        color: #f7f7f7
+        text-transform: uppercase
+        line-height: 18px
+        text-align: left
+        text-decoration: none
+        &:hover
+            color: #bdbdbd
+    &__feedback
+        float: left
+        font-size: 16px
+        line-height: 26px
+        color: #c57c40
+        text-decoration: none
+        border-bottom-style: dashed
+        &:hover
+            color: #f76701
+.content
+    padding-left: 310px
+    @media screen and (max-width: 1023px)
+        padding-left: 0
+
+.slide
+    height: calc(100vh-48px)
+    &__content
+        position: absolute
+        bottom: 100px
+        left: 10px
+        @media screen and (min-width: 1024px)
+            bottom: 150px
+            left: 80px
+
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        height: calc(100vh - 48px)
+        @media screen and ( min-width: 1024px  )
+            height: 100vh
+
+    &__text
+        line-height: 56px
+        color: #f0f0f0
+        font-family: 'Open Sans', sans-serif
+        text-transform: uppercase
+        background-color: rgba(57, 49, 43, 0.5)
+        padding: 15px
+        &::before
+            content: ""
+            display: inline-block
+            position: absolute
+            height: 100%
+            width: 100%
+            background-color: rgba(45, 38, 30, 0.302)
+            top: 30px
+            left: 30px
+
+    &__caption
+        font-size: 30px
+        position: relative
+        @media screen and (min-width: 768px)
+            font-size: 48px
+
+    &__note
+        font-size: 18px
+        position: relative
+        @media screen and (min-width: 768px)
+            font-size: 26px
+
+    &__button
+        padding: 15px 20px
+        background-color: #b36060
+        text-decoration: none
+        position: absolute
+        margin: 7px auto auto 15px
+        font-size: 18px
+        font-family: 'Lora', serif
+        color: rgb(254, 254, 254)
+        font-style: italic
+        line-height: 0.787
+        text-indent: 2.5px
+        display: inline-block
+    &__arrow
+        display: inline-block
+        top: 3px
+        position: relative
+        margin-left: 30px
+.owl-dots
+    position: absolute
+    display: flex
+    height: 16px
+    flex-direction: row
+    left: 10px
+    bottom: 22px
+    @media screen and (min-width: 1024px)
+        bottom: 45px
+        left: 80px
+.owl-dot span
+    width: 10px
+    height: 10px
+    background: #fff
+    display: block
+    border-radius: 50%
+    transition: all 0.2s ease
+    margin: 0 3px
+
+.owl-dot.active span
+    width: 16px
+    height: 16px
+
+.popup
+    position: fixed
+    z-index: 10
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: none
+    &::before
+        display: inline-block
+        content: ""
+        position: absolute
+        z-index: 1
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background-color: rgba(45, 38, 30, 0.302)
+    &--active
+        display: block
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        width: 17px
+        height: 17px
+        cursor: pointer
+
+        &::before, &::after
+            content: ""
+            position: absolute
+            width: 100%
+            height: 2px
+            background: #796454
+            top: 50%
+            transform: translateY(-50%)
+
+        &::before
+            transform: rotate(45deg)
+
+        &::after
+            transform: rotate(-45deg)
+
+    &__form
+        position: absolute
+        z-index: 2
+        top: 50%
+        left: 50%
+        width: 95%
+        transform: translate(-50%, -50%)
+        @media screen and (min-width: 1024px)
+            width: 50%
+
+.feedback-form
+    display: flex
+    flex-direction: row
+    background-color: #f2f2f2
+    &__img
+        display: none
+        @media screen and ( min-width: 768px)
+            display: block
+
+    &__image
+        height: 100%
+        width: 100%
+        object-fit: cover
+    &__body
+        width: 100%
+        padding: 30px 15px
+        @media screen and ( min-width: 1024px)
+            padding: 37px 60px
+            width: 75%
+    &__title
+        font-family: 'Noto Sans', sans-serif
+        font-size: 24px
+        color: rgb(74, 74, 74)
+        text-transform: uppercase
+        letter-spacing: 0.095em
+    &__item
+        padding-top: 37px
+    &__label
+        display: block
+        font-family: 'Fira Sans', sans-serif
+        font-size: 14px
+        color: rgb(113, 109, 109)
+        line-height: 1
+        margin-bottom: 10px
+    &__required
+        color: #b25252
+        padding: 0 2px
+
+    &__input
+        height: 43px
+        width: 100%
+        border: 1px solid rgb(238, 238, 238)
+        background-color: rgb(255, 255, 255)
+        padding: 10px
+        outline: none
+    &__textarea
+        min-height: 100px
+        resize: vertical
+    &__button
+        font-size: 14px
+        font-family: 'Lora', serif
+        color: rgb(255, 255, 255)
+        font-style: italic
+        line-height: 1.286
+        text-align: center
+        border-radius: 2px
+        background-color: rgb(219, 125, 58)
+        padding: 14px 68px
+        border: none
+        float: right
+        display: block
+        margin-top: 20px
+        cursor: pointer
+    &__text
+        font-size: 14px
+        font-family: 'Fira Sans', sans-serif
+        color: rgb(113, 109, 109)
+        padding-top: 35px
+    &__link
+        font-size: 14px
+        font-family: 'Lora', serif
+        color: #806d5f
+        padding-top: 35px
+        display: block
+._error
+    border: 1px solid rgb(183, 93, 93)
+
+.mm-menu
+
+    --mm-color-text-dimmed: #4a4a4a
+    --mm-color-text: #6a5346
+    --mm-color-border: #e1e0dd
+
+.mm-listitem__text, .mm-navbar__title
+    font-family: 'Noto Sans', sans-serif
+    font-size: 13px
+    text-transform: uppercase
+    font-weight: bold
+
+.mm-listitem:after
+    left: 0
+.mm-navbar
+    background-color: #dfddd8
+
+.mburger
+    width: 50px
+    height: 50px
+    --mb-bar-height: 2px
+    --mb-bar-width: 0.35
+    --mb-bar-spacing: 7px
+    color: #f4f4f4
