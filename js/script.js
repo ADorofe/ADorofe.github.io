@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let error = formValidate(form);
 
     let formData = new FormData(form);
-    console.log(formData);
 
     if (error === 0) {
       let response = await fetch('sendmail.php', {
@@ -104,8 +103,5 @@ document.addEventListener('DOMContentLoaded', function () {
     return !/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
       input.value,
     );
-  }
-  function phoneTest(input) {
-    return !/^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$/.test(input.value);
   }
 });
