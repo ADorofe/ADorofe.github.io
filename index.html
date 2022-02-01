@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="libs/mmenu/mmenu.css">
     <link rel="stylesheet" href="libs/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="libs/mburger/mburger.css">
+    <link rel="stylesheet" href="libs/animate/animate.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body  class="main">
@@ -148,12 +149,12 @@
 
                     <div class="feedback-form__item">
                         <label for="formPhone" class="feedback-form__label">Телефон<span class="feedback-form__required">*</span></label>
-                        <input id="formPhone" type="text" name="phone" class="feedback-form__input _reg _phone">
+                        <input id="formPhone" type="tel" name="phone" class="feedback-form__input _reg _phone">
                     </div>
                     
                     <div class="feedback-form__item">
                         <label for="formMessage" class="feedback-form__label">Сообщение</label>
-                        <textarea name="message" id="formMessage" class="feedback-form__input feedback-form__textarea"></textarea>
+                        <textarea name="message" id="formMessage" class="feedback-form__input feedback-form__textarea _reg"></textarea>
                     </div>
 
                     <button type="submit" class="feedback-form__button">Отправить</button>
@@ -200,39 +201,7 @@
 <script src="libs/jquery/jquery-3.6.0.min.js"></script>
 <script src="libs/owlcarousel/owl.carousel.min.js"></script>
 <script src="libs/mmenu/mmenu.js"></script>
-<script>
-    document.addEventListener(
-        "DOMContentLoaded", () => {
-            const menu = new Mmenu( "#mMenu" ,{
-                "navbar":
-                {
-                    "title": "Основное меню сайта",
-                }               
-            });
-        }
-    );
-</script>
-<script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            animateOut: 'zoomIn',
-            animateIn: 'fadeIn',
-            items: 1,
-            lazyLoad: true,
-            loop: true,
-            margin: 0,
-            nav: false,
-            dots: true,
-            margin: 0,
-            checkVisible: false,
-            items: 1,
-            navSpeed: 300,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: false
-        });
-    });
-</script>
+<script src="libs/maskedinput/jquery.maskedinput.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

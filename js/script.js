@@ -1,6 +1,33 @@
 'use strict';
 
+$(document).ready(function () {
+  $('.owl-carousel').owlCarousel({
+    animateOut: 'animate__zoomOut',
+    animateIn: 'animate__zoomIn',
+    items: 1,
+    lazyLoad: true,
+    loop: true,
+    margin: 0,
+    nav: false,
+    dots: true,
+    margin: 0,
+    checkVisible: false,
+    items: 1,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
+  });
+});
+
+$('#formPhone').mask('+375 (99) 999-99-99');
+
 document.addEventListener('DOMContentLoaded', function () {
+  const menu = new Mmenu('#mMenu', {
+    navbar: {
+      title: 'Основное меню сайта',
+    },
+  });
+
   $('#openForm, #mobil-openForm').click(function () {
     event.preventDefault();
     $('#popupForm').addClass('popup--active');
@@ -77,5 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
     return !/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
       input.value,
     );
+  }
+  function phoneTest(input) {
+    return !/^(\+375|80)(29|25|44|33)(\d{3})(\d{2})(\d{2})$/.test(input.value);
   }
 });
