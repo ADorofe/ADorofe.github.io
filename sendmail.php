@@ -2,13 +2,13 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    require'libs/phpmailer/src/exception.php';
-    require'libs/phpmailer/src/phpmailer.php';
+    require'libs/phpmailer/src/Exception.php';
+    require'libs/phpmailer/src/PHPMailer.php';
 
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
     $mail->setLanguage('ru', 'libs/phpmailer/language');
-    $mail->ishtml(true);
+    $mail->isHTML(true);
 
     $mail->setFrom('from@gmail.com', 'Site Elite');
     $mail->addAddress('from@gmail.com');
@@ -24,15 +24,15 @@
     if(trim(!empty($_POST['message']))){
         $body.='<p><strong>Message: </strong>'.$_POST['message'].'</p>';
     }
-    console.log($body);
-    $mail->body=$body;
+    $mail->Body = $body;
 
-    if(!$mail->send()){
-        $message='Ошибка!';
-    } else {
+    try{
+        $mail->send();
         $message = 'Данные отправлены!';
+    } catch (Exception $e) {
+        $message = 'Ошибка!';
     }
-    
+
     $response = ['message' => $message];
 
     header('Content-type: application/json');
