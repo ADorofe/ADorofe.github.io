@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (response.ok) {
         $('#popupSuccess').addClass('popup--active');
         let result = await response.json();
-        alert(result.message);
         form.reset();
       } else {
         alert('Фатальная ошибка!');
