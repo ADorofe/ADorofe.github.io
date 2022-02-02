@@ -191,6 +191,9 @@
 
 .slide {
   height: calc(100vh - 50px); }
+  @media screen and (min-width: 1024px) {
+    .slide {
+      height: auto; } }
   .slide__content {
     position: absolute;
     bottom: 100px;
