@@ -59,8 +59,7 @@
   background-blend-mode: normal;
   justify-content: inherit;
   font-family: "Open Sans", sans-serif;
-  display: none;
-  overflow: scroll; }
+  display: none; }
   @media screen and (min-height: 790px) {
     .sidebar {
       justify-content: space-between;
